@@ -1,0 +1,110 @@
+{
+                "_enabled": false,
+                "_run_on_ingest": true,
+                "failsafe": "toheat",
+                "_meta": {
+                    "name": "office t",
+                    "position": 2,
+                    "room": 1,
+                    "default_output": "normal",
+                    "hw_id": "undefined",
+                    "ext_ind": "undefined",
+                    "data": [
+                        {
+                            "relay_id": "8cbfea90ce40"
+                        }
+                    ],
+                    "type": "heat",
+                    "advancedSettingsIsOpen": true,
+                    "F": {
+                        "heat": {
+                            "min": "41",
+                            "max": "95"
+                        },
+                        "cool": {
+                            "min": "41",
+                            "max": "95"
+                        }
+                    },
+                    "C": {
+                        "heat": {
+                            "min": "19",
+                            "max": 28
+                        },
+                        "cool": {
+                            "min": "5",
+                            "max": "35"
+                        }
+                    },
+                    "ext_sensor": false
+                },
+                "isinfh": false,
+                "intervals": [],
+                "funcs": [
+                    {
+                        "_name": "fixup",
+                        "tschem_tempfix": "_parent",
+                        "fix": 1
+                    },
+                    {
+                        "_name": "fixdown",
+                        "tschem_tempfix": "_parent",
+                        "fix": -1
+                    },
+                    {
+                        "_name": "fixset",
+                        "tschem_tempfix": "_parent",
+                        "fix": {
+                            "r": "p:temp"
+                        },
+                        "isrel": {
+                            "r": "p:isrel",
+                            "def": true
+                        }
+                    },
+                    {
+                        "_name": "report",
+                        "tschem_report": "_parent"
+                    }
+                ],
+                "report": {
+                    "notifyUI": {
+                        "type": "tmp_sch",
+                        "target_temp": "%item%",
+                        "isDisabled": "%disabled%"
+                    },
+                    "tschem_params": true
+                },
+                "tschem": {
+                    "r": "dev:154755902637724:tmp"
+                },
+                "rrtrig": {
+                    "rr": "dt:t"
+                },
+                "ths": "1.00",
+                "deftemp": 24,
+                "tocool": {
+                    "blk": [
+                        {
+                            "r": "dev:154755902000704:r1",
+                            "set": "off",
+                            "persist": true,
+                            "asneeded": 1
+                        }
+                    ]
+                },
+                "toheat": {
+                    "blk": [
+                        {
+                            "r": "dev:154755902000704:r1",
+                            "set": "on",
+                            "persist": true,
+                            "asneeded": 1
+                        }
+                    ]
+                },
+                "_id": "1740557507238",
+                "_name": "1740557507238",
+                "_file_modtag": "1779200157.2197_9828",
+                "id": 1740557507238
+            }
